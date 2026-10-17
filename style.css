@@ -1,4 +1,4 @@
-/* ==========================================================
+ /* ==========================================================
    Solution+ — Thème vert sauge & blanc
    ========================================================== */
 
@@ -132,6 +132,33 @@ main h1 {
   background-color: var(--blanc);
 }
 
+/* Titres de section (équipe & objectifs) */
+.section-equipe h2,
+.section-objectif h2 {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 56px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--sauge-900);
+}
+
+.section-equipe h2::after,
+.section-objectif h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 70px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background-color: var(--sauge-500);
+}
+
 /* Les deux rangées : 3 photos par ligne */
 .p-equipe,
 .d-equipe {
@@ -221,6 +248,66 @@ main h1 {
   background-color: var(--sauge-700);
   color: var(--blanc);
   font-weight: 700;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding: 28px 5%;
+  background-color: var(--sauge-900);
+  border-top: 4px solid var(--sauge-500);
+  color: var(--sauge-100);
+  font-size: 0.95rem;
+}
+
+footer span:first-of-type {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--blanc);
+}
+
+footer span:nth-of-type(2) {
+  padding: 4px 14px;
+  border: 1px solid var(--sauge-700);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--sauge-300);
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: 1px solid var(--sauge-300);
+  border-radius: 999px;
+  font-weight: 500;
+  color: var(--blanc);
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition),
+    transform var(--transition);
+}
+
+footer a:hover,
+footer a:focus-visible {
+  background-color: var(--blanc);
+  color: var(--sauge-900);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
 }
 
 /* ---------- Responsive ---------- */
